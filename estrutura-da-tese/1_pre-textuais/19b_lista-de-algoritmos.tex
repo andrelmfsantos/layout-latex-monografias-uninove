@@ -1,0 +1,18 @@
+% ----------------------------------------- %
+%	Lista de algoritmos (não mexer)
+% ----------------------------------------- %
+
+\addcontentsline{toc}{chapter}{Lista de Algoritmos}
+
+\let\oldlistofalgorithms\listofalgorithms
+\let\oldnumberline\numberline% Store \numberline
+\newcommand{\algnumberline}[1]{Algoritmo~#1 -- }
+\renewcommand{\listofalgorithms}{%
+  \let\numberline\algnumberline% Update \numberline
+  \oldlistofalgorithms
+  \let\numberline\oldnumberline% Restore \numberline
+}
+
+\listofalgorithms
+\thispagestyle{empty}
+

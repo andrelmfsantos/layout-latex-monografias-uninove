@@ -1,0 +1,15 @@
+% ----------------------------------------- %
+%	Lista de Mapas (não mexer)
+% ----------------------------------------- %
+\renewcommand{\cftfigpresnum}{Mapa\ }
+%\newlength{\mylenf}
+\settowidth{\mylenf}{\cftfigpresnum}
+\setlength{\cftfignumwidth}{\dimexpr\mylenf+2.0em}
+\renewcommand\cftfigaftersnum{\enspace--\enspace}
+%\renewcommand{\cfttabaftersnum}{ -- }
+\counterwithout{mapa}{chapter}  % conta sem o número do capítulo
+\renewcommand{\listmapaname}{Lista de Mapas}
+\newlistentry{map}{lom}{0}
+\listofmapas
+
+\newpage

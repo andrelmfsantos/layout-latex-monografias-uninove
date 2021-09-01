@@ -1,0 +1,15 @@
+% ----------------------------------------- %
+%	Lista de quadros (não mexer)
+% ----------------------------------------- %
+
+\renewcommand{\cftfigpresnum}{Quadro\ }
+\newlength{\mylenf}
+\settowidth{\mylenf}{\cftfigpresnum}
+\setlength{\cftfignumwidth}{\dimexpr\mylenf+3em}
+\renewcommand\cftfigaftersnum{\enspace--\enspace}
+%\renewcommand{\cfttabaftersnum}{ -- }
+
+\renewcommand{\listquadroname}{Lista de Quadros}
+\counterwithout{quadro}{chapter} % conta sem o número do capítulo
+
+\listofquadro

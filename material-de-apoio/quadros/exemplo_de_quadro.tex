@@ -1,0 +1,26 @@
+% Exemplo de quadro
+
+\begin{quadro}[!ht]
+%\caption{Quadro de Exemplo}\label{quad:exemplo_de_quadro}
+\caption{\label{quad:exemplo_de_quadro}Quadro de Exemplo}
+\centering
+\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
+\hline
+\multicolumn{4}{|c|}{Country List} \\
+\hline
+Country & ISO ALPHA 2 & ISO ALPHA 3 & ISO Code\\
+\hline
+Afghanistan   & AF    &AFG&   004\\
+Aland Islands&   AX  & ALA   &248\\
+Albania &AL & ALB&  008\\
+Algeria    &DZ & DZA&  012\\
+American Samoa&   AS  & ASM&016\\
+Andorra& AD  & AND   &020\\
+Angola& AO  & AGO&024\\
+\hline
+\end{tabular}
+\vskip 0.2cm
+\fonte{Adaptado de \hyperlink{https://pt.overleaf.com/learn/latex/Tables}{Overleaf}}
+\end{quadro}
+\vspace{0em}
+\footnotesize Se usar o comando \texttt{fonte} dentro do ambiente da tabela a "fonte" fica centralizada, caso contrário fica fora.

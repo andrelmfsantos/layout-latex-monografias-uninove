@@ -1,0 +1,14 @@
+% ----------------------------------------- %
+%	Lista de equações (não mexer)
+% ----------------------------------------- %
+\newcommand{\listequationsname}{Lista de Equações}
+
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{%
+\addcontentsline{equ}{myequations}{Equação \protect\numberline{\theequation  \enspace--\enspace}#1}\par}
+\setlength{\cftmyequationsnumwidth}{2em}
+\xpretocmd{\listofmyequations}{\addcontentsline{toc}{chapter}{\listequationsname}}{}{}
+\counterwithout{equation}{chapter} % conta sem o número do capítulo
+
+\listofmyequations
+

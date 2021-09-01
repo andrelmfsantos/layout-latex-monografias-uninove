@@ -1,0 +1,196 @@
+% =========================================================== %
+% UNINOVE: Modelo de trabalho acadêmico para tese (doutorado) %
+% ou dissertação (mestrado) em conformidade com a             %
+% ABNT NBR 14724:2011.                                        %
+% Feito com base nos modelos da UNINOVE-PPGI e ICMC-USP       %
+% Autor: André Luis Marques Ferreira dos Santos               %
+% Programa de Doutorado em Administração (PPGA-UNINOVE)       %
+% Atualização: 30/08/2021                                     %
+% =========================================================== %
+% configuração da fonte, pode ser courier ou times
+\documentclass[courier]{uninove}
+% -----------------------------------------------------------
+% Pacotes adicionais
+% -----------------------------------------------------------
+\pgfplotsset{compat=1.17}     % resolve o problema do pacote pgfplots
+\setlength{\headheight}{17pt} % resolve o problema do pacote Fancyhdr
+\usepackage{epigraph}         % epígrafe
+\usepackage{ragged2e}         % justificar texto nos agradecimentos
+\usepackage{pdfpages}         % anexar pdfs
+\usepackage{lastpage}		  % Usado pela Ficha catalográfica
+% -----------------------------------------------------------
+% pacote para lista de quadros
+\DeclareCaptionType{quadro}
+\usepackage[titletoc]{appendix}
+\usepackage{trivfloat}
+%\trivfloat{quadro}
+\usepackage{multirow,tabularx}
+%\usepackage[utf8]{inputenc}
+%\usepackage{lipsum}
+%\usepackage{graphicx}
+\usepackage{float}            % pacote para colocar o caption no topo dos quadros
+\floatstyle{plaintop}         % Coloca caption no topo
+\newfloat{quadro}{htbp}{lop}  % Coloca caption no topo
+\floatname{quadro}{Quadro}    % nome do caption
+%\newcommand{\listofquadros}{\listof{quadro}{Lista de Quadros}} % renomeia o capítulo
+\captionsetup[quadro]{listformat=simple}
+\captionsetup{labelsep=endash} % muda ":" para "-" no caption dos quadros
+\usepackage[justification=centering]{caption} % centraliza o caption nos quadros
+% -----------------------------------------------------------
+% pacotes para lista de equações
+%\usepackage{tocbibind}
+\usepackage{tocloft}    % também utilizado para alinhar sumário
+%\usepackage{xpatch}
+\usepackage{amsmath}
+% -----------------------------------------------------------
+% Habilitar lista de mapas
+\DeclareCaptionType{mapa}
+% -----------------------------------------------------------
+% glossário (habilitar: B - D - E - F) .........................................
+%\let\su@ExpandTwoArgs\relax        % A - resolve conflitos no pacote glossaries
+%\let\IfSubStringInString\relax      % B - resolve conflitos no pacote glossaries
+%\let\su@IfSubStringInString\relax  % C - resolve conflitos no pacote glossaries
+%\usepackage[noredefwarn,xindy,translate=babel,nonumberlist,style=list,toc]{glossaries} % D
+%\makeglossaries % E
+%\input{estrutura-da-tese/3_pos-textuais/31_glossario} % F
+% -----------------------------------------------------------
+% Índice remissivo
+\usepackage{makeidx}
+\makeindex
+
+% Colocar hifens no sumario
+\usepackage{titletoc}
+\usepackage{chngcntr}
+%.......................................................
+% ---------------------------------------------- %
+%                                                %
+% Início do documento - comece a formatar daqui  %   
+%                                                %
+% ---------------------------------------------- %
+%
+\begin{document}
+%
+% ---------------------------------------------------------- %
+%                                                            %
+% Elementos pré-textuais                                     %
+%                                                            %
+% ---------------------------------------------------------- %
+%
+% Parâmetros para capa e folha de rosto
+% (é necessário configurar todos)
+%
+\Universidade{UNIVERSIDADE NOVE DE JULHO - UNINOVE}
+\Programa{PROGRAMA DE PÓS GRADUAÇÃO EM ADMINISTRAÇÃO - PPGA} 	
+\Autor{NOME E SOBRENOME DO AUTOR}	 
+\Titulo{TESE \& DISSERTAÇÃO -- UNINOVE (SP$\backslash$BRASIL):\\MODELO PARA MONOGRAFIAS DE MESTRADO E DOUTORADO.}
+\Tipoexame{Qualificação}
+\Titulacao{Doutor}
+\Orientador{Dr. Nome do(a) Orientador(a) Vai Aqui}
+\Coorientador{Dr. Nome do(a) Coorientador(a) Vai Aqui} % se não se aplica comentar em uninove-ppga.cls linha 376
+\Ano{2021}
+%
+% ..........................................................
+%
+% Inputs (colocar comentários caso não se aplique)
+%
+% Capa
+\input{estrutura-da-tese/1_pre-textuais/10_capa}
+% Folha de rosto
+\input{estrutura-da-tese/1_pre-textuais/11_folha-de-rosto}
+% Errata
+\input{estrutura-da-tese/1_pre-textuais/12_errata}
+% Folha de aprovação
+\input{estrutura-da-tese/1_pre-textuais/13_folha-de-aprovacao}
+% Ficha catolográfica
+\input{estrutura-da-tese/1_pre-textuais/11a_ficha-catalografica}
+% Dedicatória
+\input{estrutura-da-tese/1_pre-textuais/14_dedicatoria}
+% Agradecimentos
+\input{estrutura-da-tese/1_pre-textuais/15_agradecimentos}
+% Epígrafe
+\input{estrutura-da-tese/1_pre-textuais/16_epigrafe}
+% Resumo
+\input{estrutura-da-tese/1_pre-textuais/17_resumo}
+% Abstract
+\input{estrutura-da-tese/1_pre-textuais/18_abstract}
+%
+% ---------------------------
+%
+% Sumário
+%
+\tableofcontents 
+\thispagestyle{empty}
+\addtocontents{toc}{~\hfill\textbf{Páginas}\par}
+\clearpage
+% ---------------------------
+%
+% Listas
+%
+% comentar listas que não se aplicaram ao modelo
+% Lista de figuras
+\input{estrutura-da-tese/1_pre-textuais/19a_lista-de-figuras}
+% Lista de algoritmos
+\input{estrutura-da-tese/1_pre-textuais/19b_lista-de-algoritmos}
+% Lista de equações
+\input{estrutura-da-tese/1_pre-textuais/19c_lista-de-equacoes}
+%\listofmyequations
+% Lista de quadros
+\input{estrutura-da-tese/1_pre-textuais/19d_lista-de-quadros}
+%\listofquadros
+% Lista de abreviaturas e siglas
+\input{estrutura-da-tese/1_pre-textuais/19e_lista-de-abreviaturas-e-siglas}
+% Lista de tabelas
+\input{estrutura-da-tese/1_pre-textuais/19f_lista-de-tabelas}
+% Lista de símbolos
+\input{estrutura-da-tese/1_pre-textuais/19g_lista-de-simbolos}
+% Lista de mapas
+\input{estrutura-da-tese/1_pre-textuais/19h_lista-de-mapas}
+%
+% CORPO DO DOCUMENTO
+%
+% ---------------------------------------------------------- %
+%                                                            %
+% Elementos textuais                                         %
+%                                                            %
+% ---------------------------------------------------------- %
+%
+% Introdução
+\input{estrutura-da-tese/2_textuais/20_introducao}
+% Revisão da Literatura
+\input{estrutura-da-tese/2_textuais/21_literatura}
+% Metodolodia
+\input{estrutura-da-tese/2_textuais/22_metodologia}
+% Resultados
+\input{estrutura-da-tese/2_textuais/23_resultados}
+% Conclusão
+\input{estrutura-da-tese/2_textuais/24_conclusao}
+% Capítulo com exemplos (comentar essa linha para não exibir)
+\input{material-de-apoio/outros/exemplos}
+%
+% ---------------------------------------------------------- %
+%                                                            %
+% Elementos pós textuais                                     %
+%                                                            %
+% ---------------------------------------------------------- %
+%
+% ---------------------------
+% Bibliografia
+\bibliography{referencias}
+% ---------------------------
+% Glossário
+%\input{estrutura-da-tese/3_pos-textuais/31_glossario} (habilitar apenas para entradas manuais)
+%\printglossaries
+% ---------------------------
+% Apêndices
+\input{estrutura-da-tese/3_pos-textuais/32_apendices}
+% Anexos
+\input{estrutura-da-tese/3_pos-textuais/33_anexos}
+% Índice
+\input{estrutura-da-tese/3_pos-textuais/34_indice}
+%
+\end{document}
+% =========================================================== %
+% ----------------------------------------------------------- %
+% .................... FIM DO DOCUMENTO ..................... %
+% ----------------------------------------------------------- %
+% =========================================================== %

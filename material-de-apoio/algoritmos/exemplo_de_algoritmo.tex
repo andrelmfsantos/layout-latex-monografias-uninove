@@ -1,0 +1,16 @@
+% Exemplo de algoritmo:
+% controla endentação
+\begin{algorithm}[H]
+\SetAlgoLined
+\Entrada{$S,\eta, U$} 
+\Saida{Número esperado de nós atingidos}
+\Inicio{
+	$\sigma(S) = 0$ \\
+\Para{cada $u \in S$}{
+	$\sigma(S)\leftarrow \sigma(S)+\textsc{Backtrack}(u,\eta,W,U)$\\
+}
+}
+\Retorna{$\sigma(S)$}
+\label{alg1}
+\caption{\textsc{Esperança}}
+\end{algorithm}
